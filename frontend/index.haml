@@ -1,0 +1,117 @@
+-gallery_photos= ["cama1.jpeg","cama2.jpeg","cama3.jpeg","cama4.jpeg","cama5.jpeg"]
+!!!5
+%html{class:"no-js", lang:"es"}
+  %head
+    %meta{charset:"utf-8"}
+    %title El descanso deseado
+    %meta{name:"description", content:"Descansa tranquilo"}
+    %link{rel:"stylesheet", href:"https://fonts.googleapis.com/css?family=Dancing+Script" }
+    %link{rel:"stylesheet", href:"https://fonts.googleapis.com/css?family=Open+Sans"}
+    %link{rel:"stylesheet", href:"https://fonts.googleapis.com/css?family=Slabo+27px" }
+    %link{rel:"stylesheet",href:"css/normalize.css"}
+    %link{rel:"stylesheet",href:"css/bootstrap.css"}
+    %link{rel:"stylesheet",href:"css/flexboxgrid.min.css"}
+    %link{rel:"stylesheet", href:"css/main.css"}
+    %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
+    %meta{:"data-name"=> "image-counter", content: "#{gallery_photos.size}"}
+    %script{src:"js/vendor/modernizr-2.8.3.min.js"}
+
+
+  %body
+    ="<!--[if lt IE 9]>"
+    %p{class:"browserupgrade"}
+      Estas usando un navegador %strong desactualizado.
+      Por favor %a{href:"http://browserhappy.com/"} actualiza tu navegador
+      para mejor experiencia
+    ="<![endif]-->"
+    .video-container
+      %video{autoplay:true,loop:true,width:"1280", height:"720", poster:"/videos/Went-Fetch/images/Went-Fetch.jpg"}
+        %source{src:"/videos/Went-Fetch/mp4/Went-Fetch.mp4",typ:"video/m"}
+        %source{src:"/videos/Went-Fetch/webm/Went-Fetch.webm", typ:"video/webm"}
+    .row.full-height.middle-xs.center-xs.relative.up#home
+      .col-xs-12
+        .box.white-text
+          //%img{src:"/img/descanso2.jpg", width:200}
+          %h1.dancing-script.title.no-margin Camas y Colchones Lugue
+          %p#is-open 
+            %i.glyphicon.glyphicon-time
+            %span.text Abierto ahora
+      %nav.fixed.top.right.white-text.navigation#navigation
+        -menu = [{title:"Inicio",link:"#home"},{title:"Catálogo",link:"#catalogo"},{title:"Galería",link:"#gallery"},{title:"Contacto",link:"#contact"},{title:"Cómo llegar",link:"#location"}]
+        %ul.list-inline
+          -menu.each do |item|
+            %li
+              %a{href:item[:link]}= item[:title]
+      .absolute.black.large-padding.white-text.full-width#description
+        .row.middle-xs.center-xs
+          .col-xs-7.col-sm-6.white-text.medium.slabo
+            Tu satisfacción al descansar
+          .col-xs#sticky-navigation
+            .box
+              %nav.text-right.navigation#responsive-nav
+                %i.glyphicon.glyphicon-menu-hamburger.white-text.subtitle.glyphicon-remove#menu-opener
+                %ul.list-inline
+                  -menu.each do |item|
+                    %li
+                      %a.slabo.menu-link{href:item[:link]}= item[:title]
+    .text-center.relative#catalogo
+      .absolute.white#catalogo-title
+        %h2.dancing-script.title Catálogo
+      -menu_photos= [{name:"Camas", image:"cama.jpg",pricing:"420.00"},{name:"Camas a tu Necesidad", image:"camadivan.jpg",pricing:"420.00"},{name:"Protectores de Colchón", image:"protector1.jpg",pricing:"420.00"},{name:"Capitone", image:"capitone.png",pricing:"420.00"},{name:"Servicio de Tapizados", image:"sofa4.jpeg",pricing:"420.00"},{name:"Cojines", image:"cojines.jpg",pricing:"420.00"},{name:"Articulos para dormitorio", image:"cubrecama.jpg",pricing:"420.00"},{name:"Lavados Industriales", image:"lavado_colchone.jpg",pricing:"420.00"}]
+      .row
+        -menu_photos.each do |photo|
+          .col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(/img/seleccionados/#{photo[:image]})"}
+            //%img{src:"/img/#{photo[:image]}.jpg"}
+            .screen
+              .row.middle-xs.full-height
+                .col-xs-12
+                  %h3.dancing-script.white-text.subtitle=photo[:name]
+    #gallery
+      .inner
+        -gallery_photos.each do |image|
+          .image{style:"background-image:url(/img/camas/#{image});"} 
+    .container
+      .card.white.black-text.text-center.relative
+        %h3.slim
+          En 
+          %strong.dancing-script.medium Camas y Colchones Lugue 
+          encontrarás satisfacción en lo que buscas
+        %p.text-justify.top-space.open-sans
+          Nos dedicamos a la produccion y reparacion de camas y colchones de diversos tamaños
+          %strong Giannina Lujan - Gerente General
+          .large-padding.medium.black.white-text.open-sans
+            .text-center
+              También puedes acceder a este sitio sin conexión a internet
+
+    .black.white-text.full-height#contact
+      .row.middle-xs.full-height
+        .col-xs-12
+          .box
+            %p.text-center.medium.open-sans#info-contacto Presiona enter para llenar el campo correspondiente y enviarnos un correo.
+            %form{action:"https://formspree.io/gianninalugue@hotmail.com",method:"POST",id:"contact-form", class:"step-form"}
+              .row.center-xs
+                .col-xs-12.col-sm-6.first-xs
+                  .box
+                    %fieldset.step.col-md-4
+                      %input{class:"input", type:"text",name:"userName",placeholder:"Tu Nombre", required:true}
+                    %fieldset.step.col-md-4
+                      %input{class:"input", type:"email",name:"email",placeholder:"Tu Correo electrónico", required:true}
+                    %fieldset.step.col-md-4
+                      %input{class:"input", type:"text",name:"userPhone",placeholder:"Tu Teléfono", required:true}
+                    %fieldset.step.col-md-12
+                      %textarea{class:"input", name:"body",placeholder:"Cuéntanos ", required:true}
+    #location
+      #map
+      #message.black.large-paggdding.white-text.text-center.medium
+        Nuestra ubicacion
+
+    %script{src:"http://code.jquery.com/jquery-3.2.1.min.js", integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=", crossorigin: "anonymous"}
+    :javascript
+      window.jQuery || document.write("<script src='/js/vendor/jquery-1.12.0.min.js'><\/script>");
+    
+    %script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyAi5FPfSJ7VpDKREacabyz_SvtqTyfWOdo"}
+    %script{src:"/dist/form_object.js"}
+    %script{src:"/dist/maps.js"}
+    %script{src:"/dist/main.js"}
+    %script{src:"/dist/steps.js"}
+    
