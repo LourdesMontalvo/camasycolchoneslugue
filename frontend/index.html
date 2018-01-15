@@ -68,7 +68,7 @@
             <div class="box">
               <nav class="text-right navigation" id="responsive-nav">
                 <i class="glyphicon glyphicon-menu-hamburger white-text subtitle glyphicon-remove" id="menu-opener"></i>
-                <ul class="list-inline">
+                <ul class="list-inline overflow-y">
                   <li>
                     <a class="slabo menu-link" href="#home">Inicio</a>
                   </li>
@@ -206,21 +206,21 @@
       </div>
     </div>
     <div class="black white-text full-height" id="contact">
-      <div class="row middle-xs full-height">
+      <div class="row middle-xs">
         <div class="col-xs-12">
           <div class="box">
-            <p class="text-center medium open-sans" id="info-contacto">Presiona enter para llenar el campo correspondiente y enviarnos un correo.</p>
+            <p class="text-center medium open-sans" id="info-contacto">Completa el siguiente formulario para enviarnos un correo.</p>
             <form action="https://formspree.io/gianninalugue@hotmail.com" class="step-form" id="contact-form" method="POST">
               <div class="row center-xs">
                 <div class="col-xs-12 col-sm-6 first-xs">
                   <div class="box">
-                    <fieldset class="step col-md-4">
+                    <fieldset class="step col-md-12">
                       <input class="input" name="userName" placeholder="Tu Nombre" required type="text">
                     </fieldset>
-                    <fieldset class="step col-md-4">
+                    <fieldset class="step col-md-6">
                       <input class="input" name="email" placeholder="Tu Correo electrónico" required type="email">
                     </fieldset>
-                    <fieldset class="step col-md-4">
+                    <fieldset class="step col-md-6">
                       <input class="input" name="userPhone" placeholder="Tu Teléfono" required type="text">
                     </fieldset>
                     <fieldset class="step col-md-12">
@@ -229,16 +229,25 @@
                   </div>
                 </div>
               </div>
+              <div class="text-center">
+                <button id="contact-submit">Enviar</button>
+              </div>
             </form>
           </div>
         </div>
       </div>
     </div>
     <div id="location">
-      <div id="map"></div>
-      <div class="black large-paggdding white-text text-center medium" id="message">
+      <div id="map" class="col-lg-12"></div>
+      <div class="black large-paggdding white-text text-center medium col-lg-12" id="message">
         Nuestra ubicacion
       </div>
+      <div class="black large-paggdding white-text text-center medium col-lg-12" id="message">
+        <small><i>Síguenos en:</i></small>
+        <a href="https://www.facebook.com/Camas-y-Colchones-Lugue-861884787176812", target="_blank">
+          <img src="/img/fb.jpg" class="social-icon">
+        </a>
+      </div>      
     </div>
     <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>

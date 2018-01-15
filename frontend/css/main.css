@@ -380,6 +380,39 @@ textarea {
 .clearfix:after {
   clear: both; }
 
+#contact-submit {
+  background-color: white;
+  border: 2px solid #555555;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 100%;
+}
+
+#contact-submit:hover {
+    background-color: #555555;
+    color: white;
+}
+
+.overflow-y{
+  overflow-y: visible !important;
+}
+
+.social-icon{
+  width: 30px;
+  border-radius: 30px;
+  color: white;
+  border: solid;
+  margin: 0 10px;
+}
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
@@ -480,3 +513,31 @@ textarea {
   h2,
   h3 {
     page-break-after: avoid; } }
+
+@media(min-width: 300px){
+  #contact{
+    height: 860px;
+  }
+}
+
+@media(min-width: 340px){
+  #contact{
+    padding-top: 115px;
+    height: 980px;
+  }
+}
+
+@media(min-width: 720px){
+  #contact{
+    height: 935px;
+  }
+  #contact-submit{
+    width: 50%;
+  }
+}
+
+@media(min-width: 992px){
+  #contact{
+    height: 825px;
+  }
+}
